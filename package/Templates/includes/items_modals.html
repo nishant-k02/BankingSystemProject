@@ -1,0 +1,65 @@
+<style>
+    .modal-content {
+        background-color: #212121;
+    }
+    .modal-title {
+        color: #808080;
+    }
+    .modal-body {
+        color: #212121;
+    }
+
+
+
+
+</style>
+
+<!-- Modal Transfer money -->
+<div class="modal fade" id="Modal-TransferMoney-{{ customer.Sr_no }}" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Send Money</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="">
+                    <div class="input-group mb-3">
+                        <input type="text" id="enterSName" class="form-control" placeholder="Sender's Email"
+                               aria-label="Sender's Email" aria-describedby="basic-addon2">
+<!--                        <div class="input-group-append">-->
+<!--                            <span class="input-group-text" id="basic-addon3">@gmail.com</span>-->
+<!--                        </div>-->
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" id="enterName" class="form-control" placeholder="Recipient's email"
+                               aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon2">@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Rs. ₹</span>
+                        </div>
+                        <input type="text" id="enterAmount" class="form-control" placeholder=" Enter Amount"
+                               aria-label="Amount">
+                        <div class="input-group-append">
+                            <span class="input-group-text">.00</span>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" onclick="sendMoney()" class="btn btn-success" data-bs-dismiss="modal">Send
+                    Money
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

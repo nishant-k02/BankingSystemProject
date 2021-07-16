@@ -1,101 +1,114 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Customers Page</title>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-       <a class="navbar-brand" href="#">Comman Bank of India</a>
-       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-         <span class="navbar-toggler-icon"></span>
-       </button>
-       <div class="collapse navbar-collapse" id="navbarNav">
-           <ul class="navbar-nav ms-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ url_for('home_Page') }}">Home <span class="sr-only"></span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('Customers_Page') }}">Customers</a>
-                </li>
-           </ul>
-           <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Transection History</a>
-                </li>
-           </ul>
-       </div>
-    </nav>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Comman Bank of India</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('home_Page') }}">Home <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('Customers_Page') }}">Customers</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Transection History</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
 
-    <h1>Customers Details!</h1>
+<h1> OUR CUSTOMERS DETAILS </h1>
 
-    <table class="table table-hover table-dark table-striped table-bordered table-condensed ">
+
+<table class="table table-hover table-dark table-striped table-bordered table-condensed ">
     <thead class="thead table-dark">
-        <tr>
-            <!-- Your Columns HERE -->
-            <th scope="col">Sr_no</th>
-            <th scope="col">Name</th>
-            <th scope="col">Email_Id</th>
-            <th scope="col">Account_Number</th>
-            <th scope="col">Balance</th>
-            <th scope="col">Transfer Money</th>
-        </tr>
+    <tr>
+        <!-- Your Columns HERE -->
+        <th scope="col">Sr_no</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email_Id</th>
+        <th scope="col">Account_Number</th>
+        <th scope="col">Balance</th>
+        <th scope="col">Transfer Money</th>
+    </tr>
     </thead>
     <tbody>
-        <!-- Your rows inside the table HERE: -->
-        {% for customer in customers%}
-            <tr>
-                <td>{{ customer.Sr_no }}</td>
-                <td>{{ customer.Name }}</td>
-                <td>{{ customer.Email_Id }}</td>
-                <td>{{ customer.Account_Number }}</td>
-                <td>{{ customer.Balance }} /-</td>
-                <td>
-                    <button class="btn btn-outline btn-success">Transfer Money</button>
-                </td>
-            </tr>
-        {% endfor %}
+    <!-- Your rows inside the table HERE: -->
+    {% for customer in customers%}
+    {% include 'includes/items_modals.html' %}
+    <tr>
+        <td>{{ customer.Sr_no }}</td>
+        <td>{{ customer.Name }}</td>
+        <td>{{ customer.Email_Id }}</td>
+        <td>{{ customer.Account_Number }}</td>
+        <td>{{ customer.Balance }} /-</td>
+        <td>
+            <button class="btn btn-outline btn-info" data-bs-toggle="modal"
+                    data-bs-target="#Modal-TransferMoney-{{ customer.Sr_no }}">
+                Transfer
+                Money
+            </button>
+        </td>
+    </tr>
+    {% endfor %}
 
     </tbody>
 </table>
 
-    <!-- Optional JavaScript; choose one of the two! -->
+<!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    -->
-  </body>
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+-->
+</body>
 </html>
 
 
 <style>
         body {
-            background: url('data:image/jpeg;base64,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') no-repeat fixed  ;
+            font-family: 'Roboto', sans-serif;
+            background-image: url("https://github.com/bhoskarpooja/Basic_Banking_System/blob/main/img/bank3.jpg?raw=true");
+            width: 100%;
+            height: 60%;
+            background-position: center;
+            background-repeat: no-repeat;
             background-size: cover;
-            color: white;
-        }
+  }
         h1 {
             text-align: center;
-            color: 	#7fffd4;
+            color: 	#212121;
             font-weight: 1000;
             padding: 10px;
         }
         table {
-            opacity: 70%;
+            opacity: 80%;
         }
         td {
             opacity: 100%;
@@ -104,4 +117,13 @@
         thead {
             text-align: center;
         }
-    </style>
+
+
+
+
+
+
+
+
+
+</style>
