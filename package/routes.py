@@ -15,4 +15,11 @@ def Customers_Page():
     customers = Customer.query.all()
     return render_template('CustomersPage.html', customers=customers)
 
+@app.route('/transectionPage')
+def transection_Page():
+    return render_template('transectionPage.html')
+
+
+
+
 
