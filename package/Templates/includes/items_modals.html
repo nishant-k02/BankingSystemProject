@@ -12,6 +12,8 @@
 
 
 
+
+
 </style>
 
 <!-- Modal Transfer money -->
@@ -30,16 +32,16 @@
                     <div class="input-group mb-3">
                         <input type="text" id="enterSName" class="form-control" placeholder="Sender's Email"
                                aria-label="Sender's Email" aria-describedby="basic-addon2">
-<!--                        <div class="input-group-append">-->
-<!--                            <span class="input-group-text" id="basic-addon3">@gmail.com</span>-->
-<!--                        </div>-->
+                        <!--                        <div class="input-group-append">-->
+                        <!--                            <span class="input-group-text" id="basic-addon3">@gmail.com</span>-->
+                        <!--                        </div>-->
                     </div>
                     <div class="input-group mb-3">
                         <input type="text" id="enterName" class="form-control" placeholder="Recipient's email"
                                aria-label="Recipient's username" aria-describedby="basic-addon2">
-<!--                        <div class="input-group-append">-->
-<!--                            <span class="input-group-text" id="basic-addon2">@gmail.com</span>-->
-<!--                        </div>-->
+                        <!--                        <div class="input-group-append">-->
+                        <!--                            <span class="input-group-text" id="basic-addon2">@gmail.com</span>-->
+                        <!--                        </div>-->
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -56,7 +58,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" onclick="Modal-TransferMoney-{{ customer.Sr_no }}()" class="btn btn-success" data-bs-dismiss="modal">Send
+                <button type="button" onclick="Modal-TransferMoney-{{ customer.Sr_no }}()" class="btn btn-success"
+                        data-bs-dismiss="modal" value="showAlert" onclick="showAlert();">Send
                     Money
                 </button>
             </div>
@@ -65,26 +68,26 @@
 </div>
 
 
-
 <!-- Modal transaction History-->
-  <div class="modal fade" id="#transactionHistory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="#transactionHistory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel2">Transaction History</h5>
-          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <ol id="transaction-history-body">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel2">Transaction History</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ol id="transaction-history-body">
 
-          </ol>
+                </ol>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
 

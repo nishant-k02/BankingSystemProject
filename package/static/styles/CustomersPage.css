@@ -1,0 +1,25 @@
+body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url("https://github.com/bhoskarpooja/Basic_Banking_System/blob/main/img/bank3.jpg?raw=true");
+            width: 100%;
+            height: 60%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+  }
+        h1 {
+            text-align: center;
+            color: 	#212121;
+            font-weight: 1000;
+            padding: 10px;
+        }
+        table {
+            opacity: 80%;
+        }
+        td {
+            opacity: 100%;
+            text-align: center;
+        }
+        thead {
+            text-align: center;
+        }

@@ -1,0 +1,51 @@
+ body {
+     background-image: url("https://github.com/bhoskarpooja/Basic_Banking_System/blob/main/img/bank1.jpg?raw=true");
+     height: 695px;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     position: relative;
+  }
+
+        .heading {
+     font-size: 4.4rem ;
+     color: white;
+     font-family:Verdana, Geneva, Tahoma, sans-serif;
+     margin-left: 10%;
+     margin-top: -5%;
+  }
+
+        .content {
+     font-size: 1.9rem;
+     color: white;
+     font-family: 'Itim', cursive;
+     margin-left: 10%;
+  }
+
+        img {
+     width: 10%;
+     height: 21%;
+     margin-top: 1%;
+     margin-left: 6%;
+  }
+
+       .btn:hover {
+     color: white;
+     box-shadow: 3px 5px rgb(255,255,255,0.5);
+
+  }
+
+       .btn {
+     margin-left: 10%;
+     height: 50px;
+     width: 30%;
+     width: 18vw;
+     border-radius: 20rem;
+  }
+
+       .btn-info {
+     color: white;
+     background-color: #17a2b8;
+     border-color: #17a2b8;
+     font-size: 150%;
+  }
