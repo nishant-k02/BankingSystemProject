@@ -6,20 +6,24 @@ body {
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-  }
-        h1 {
+    }
+
+h1 {
             text-align: center;
             color: 	#212121;
             font-weight: 1000;
             padding: 10px;
-        }
-        table {
+   }
+
+table {
             opacity: 80%;
-        }
-        td {
+      }
+
+td {
             opacity: 100%;
             text-align: center;
-        }
-        thead {
+   }
+
+thead {
             text-align: center;
-        }
+      }
